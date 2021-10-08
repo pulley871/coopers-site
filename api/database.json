@@ -15,7 +15,8 @@
             "id": 1,
             "address": "102 North Ln",
             "city": "Hendersonville",
-            "zipcode": 37055
+            "zipcode": 37055,
+            "machineMoney": 100.00
         }
     ],
     "snacksByMachine":
@@ -25,7 +26,8 @@
             "machineId": 1,
             "snackId": 1,
             "price": 1.25,
-            "quantity": 12
+            "quantity": 12,
+            "isActive": true
         }
     ],
     "defectiveInventory":
