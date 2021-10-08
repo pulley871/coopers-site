@@ -1,6 +1,7 @@
 import { Route } from "react-router"
 import { DataProvider } from "./data/DataProvider"
 import { Inventory } from "./inventory/Inventory"
+import { InventoryForm } from "./inventory/InventoryForm"
 import { Machines } from "./machines/Machines"
 import { SelectedMachine } from "./selectedmachine/SelectedMachine"
 
@@ -11,6 +12,9 @@ export const AppView = () =>{
             <DataProvider>
                 <Route exact path = "/inventory">
                     <Inventory />
+                </Route>
+                <Route exact path = "/inventoryForm">
+                    <InventoryForm />
                 </Route>
                 <Route path = "/machines">
                     <Machines />
