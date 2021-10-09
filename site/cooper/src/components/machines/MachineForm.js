@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useReducer } from "react"
 import {useHistory} from "react-router-dom"
 
-export const InventoryForm = () => {
+export const MachineForm = () => {
 
     const [data, setData] = useState([])
     const history= useHistory()
@@ -9,11 +9,10 @@ export const InventoryForm = () => {
     const submitForm = (event) => {
         event.preventDefault()
 
-        const inventoryObject = {
-            name: data.name,
-            brand: data.brand,
-            inventory: parseInt(data.inventory),
-            wholesaleprice: parseFloat(data.price)
+        const machineObject = {
+            address: data.address,
+            city: data.city,
+            zipcode: parseInt(data.zipcode)
         }
 
         const fetchOption = {
@@ -21,47 +20,25 @@ export const InventoryForm = () => {
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(inventoryObject)
+            body: JSON.stringify(machineObject)
         }
         
-        return fetch("http://localhost:8088/snacks", fetchOption)
-            .then((res) => res.json())
-            .then(data => defectiveInventory(data.id))
-            .then(() => history.push("/inventory"))
+        return fetch("http://localhost:8088/machines", fetchOption)
+            .then(() => history.push("/machines"))
         
     }
-    const defectiveInventory = (id) => {
-        
-
-        const defectiveObject = {
-            snackId: id,
-            inventory: 0,
-            
-        }
-
-        const fetchOption = {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(defectiveObject)
-        }
-        
-        return fetch("http://localhost:8088/defectiveInventory", fetchOption)
-            
-        
-    }
+    
 
     return (
         <>
              <form className="inventoryForm">
-            <div className="inventoryForm--h2"><h1 className="inventoryForm__title">Add Inventory</h1></div>
-                <div></div>
+            <div className="inventoryForm--h2"><h1 className="machineForm__title">Add Machine</h1></div>
+                
               
             
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="description">Name Of Candy:</label>
+                    <label htmlFor="description">Address:</label>
                     <input
                         required= {true} autoFocus={true}
                         type="text"
@@ -70,14 +47,14 @@ export const InventoryForm = () => {
                         onChange= {
                             (event) => {
                                 const copy = {...data}
-                                copy.name = event.target.value
+                                copy.address = event.target.value
                                 setData(copy)
                             }
 
                         } />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="description">Brand:</label>
+                    <label htmlFor="description">City:</label>
                     <input
                         required= {true} autoFocus={true}
                         type="text"
@@ -86,31 +63,14 @@ export const InventoryForm = () => {
                         onChange= {
                             (event) => {
                                 const copy = {...data}
-                                copy.brand = event.target.value
+                                copy.city = event.target.value
                                 setData(copy)
                             }
 
                         } />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="description">Quantity:</label>
-                    <input
-                        required= {true} autoFocus={true}
-                        type="text"
-                        className="form-control-inventory"
-                        placeholder=""
-                        defaultValue="0"
-                        onChange= {
-                            (event) => {
-                                const copy = {...data}
-                                copy.inventory = event.target.value
-                                setData(copy)
-                            }
-
-                        } />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="description">Cost(per candy):</label>
+                    <label htmlFor="description">Zip Code:</label>
                     <input
                         required= {true} autoFocus={true}
                         type="text"
@@ -120,7 +80,7 @@ export const InventoryForm = () => {
                         onChange= {
                             (event) => {
                                 const copy = {...data}
-                                copy.price = event.target.value
+                                copy.zipcode = event.target.value
                                 setData(copy)
                             }
 

@@ -4,6 +4,7 @@ import { DefectiveInventory } from "./defective/UpdateDefectiveInventory"
 import { Inventory } from "./inventory/Inventory"
 import { InventoryForm } from "./inventory/InventoryForm"
 import { UpdateInventoryQuantity } from "./inventory/InventoryUpdateQuantity"
+import { MachineForm } from "./machines/MachineForm"
 import { Machines } from "./machines/Machines"
 import { SelectedMachine } from "./selectedmachine/SelectedMachine"
 
@@ -26,6 +27,9 @@ export const AppView = () =>{
                 </Route>
                 <Route path = "/machines">
                     <Machines />
+                </Route>
+                <Route path = "/machines/addMachine">
+                    <MachineForm />
                 </Route>
                 <Route exact path = "/machines/:machineId(\d+)">
                     <SelectedMachine />

@@ -6,6 +6,13 @@
       "brand": "Mars Inc.",
       "inventory": 99,
       "wholesaleprice": 0.25
+    },
+    {
+      "name": "balls",
+      "brand": "old mans",
+      "inventory": 2,
+      "wholesaleprice": null,
+      "id": 2
     }
   ],
   "machines": [
@@ -30,6 +37,11 @@
       "id": 1,
       "snackId": 1,
       "quantity": 7
+    },
+    {
+      "snackId": 2,
+      "inventory": 0,
+      "id": 2
     }
   ],
   "soldSnacksbyMachine": [
