@@ -1,10 +1,11 @@
 import { useContext, useEffect, useState } from "react"
-import { useParams } from "react-router"
+import { useHistory, useParams } from "react-router"
 import { DataContext } from "../data/DataProvider"
 
 
 export const DefectiveInventory = () => {
     const {id} = useParams()
+    const history = useHistory()
     const [foundItem, setItem] = useState({})
     const [quantity, setQuantity] = useState(0)
     const {fetchDefects, defectiveInv, inventory} = useContext(DataContext)
@@ -50,5 +51,8 @@ export const DefectiveInventory = () => {
         <button onClick={() => {
             updateQuantity().then(()=> render())
         }}>Update</button>
+        <button onClick={() =>{
+            history.push("/inventory")
+        }}>Return</button>
     </>)
 }
