@@ -4,22 +4,8 @@
       "id": 1,
       "name": "Snickers",
       "brand": "Mars Inc.",
-      "inventory": 100,
+      "inventory": 99,
       "wholesaleprice": 0.25
-    },
-    {
-      "name": "hehe",
-      "brand": "hehe",
-      "inventory": 9,
-      "wholesaleprice": 8,
-      "id": 2
-    },
-    {
-      "name": "read",
-      "brand": "brws",
-      "inventory": 8,
-      "wholesaleprice": 22,
-      "id": 3
     }
   ],
   "machines": [
@@ -27,8 +13,7 @@
       "id": 1,
       "address": "102 North Ln",
       "city": "Hendersonville",
-      "zipcode": 37055,
-      "machineMoney": 100
+      "zipcode": 37055
     }
   ],
   "snacksByMachine": [
@@ -37,20 +22,14 @@
       "machineId": 1,
       "snackId": 1,
       "price": 1.25,
-      "quantity": 12,
-      "isActive": true
+      "quantity": 12
     }
   ],
   "defectiveInventory": [
     {
       "id": 1,
       "snackId": 1,
-      "quantity": 1
-    },
-    {
-      "snackId": 3,
-      "inventory": 0,
-      "id": 2
+      "quantity": 7
     }
   ],
   "soldSnacksbyMachine": [
