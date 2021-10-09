@@ -5,6 +5,7 @@ export const DataContext = createContext()
 export const DataProvider = (props) => {
     const [machines, setMachines] = useState([])
     const [inventory, setInventory] = useState([])
+    const [snack, setSnack] = useState({})
     const [snacksByMachine, setSBM] = useState([])
     const [defectiveInv, setdi] = useState([])
     const [soldSnacks, setSoldSnacks] = useState([])
@@ -23,6 +24,13 @@ export const DataProvider = (props) => {
                 setInventory(data)
             })
     }
+    const fetchSnack = (id) => {
+        return fetch(`http://localhost:8088/snacks/${id}`)
+            .then(res => res.json())
+            .then((data) => {
+                setSnack(data)
+            })
+    }
     const fetchSnacksByMachine = (id) => {
         return fetch(`http://localhost:8088/snacksByMachine?machineId=${id}`)
             .then(res => res.json())
@@ -30,8 +38,8 @@ export const DataProvider = (props) => {
                 setSBM(data)
             })
     }
-    const fetchDefects = () => {
-        return fetch("http://localhost:8088/defectiveInventory")
+    const fetchDefects = (id) => {
+        return fetch(`http://localhost:8088/defectiveInventory/${id}`)
             .then(res => res.json())
             .then((data) => {
                 setdi(data)
@@ -53,7 +61,7 @@ export const DataProvider = (props) => {
     }
     return(
         <DataContext.Provider value={{
-            fetchInventory, fetchMachines, fetchDefects, fetchDefectiveSnacksByMachine, fetchSnacksByMachine, fetchSoldSnacks, machines, inventory, soldSnacks, snacksByMachine, defectiveInv, defectiveSnacksByMachine
+            fetchSnack,fetchInventory, fetchMachines, fetchDefects, fetchDefectiveSnacksByMachine, fetchSnacksByMachine, fetchSoldSnacks, machines, inventory, soldSnacks, snacksByMachine, defectiveInv, defectiveSnacksByMachine, snack
         }}>
             {props.children}
         </DataContext.Provider>

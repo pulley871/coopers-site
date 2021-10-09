@@ -1,57 +1,49 @@
 {
-    "snacks": 
-    [
-        {
-            "id": 1,
-            "name": "Snickers",
-            "brand": "Mars Inc.",
-            "inventory": 100,
-            "wholesaleprice": 0.25
-        }
-    ],
-    "machines":
-    [
-        {
-            "id": 1,
-            "address": "102 North Ln",
-            "city": "Hendersonville",
-            "zipcode": 37055,
-            "machineMoney": 100.00
-        }
-    ],
-    "snacksByMachine":
-    [
-        {
-            "id": 1,
-            "machineId": 1,
-            "snackId": 1,
-            "price": 1.25,
-            "quantity": 12,
-            "isActive": true
-        }
-    ],
-    "defectiveInventory":
-    [
-        {
-            "id": 1,
-            "snackId": 1,
-            "quantity": 1
-        }
-    ],
-    "soldSnacksbyMachine":
-    [
-        {
-            "id": 1,
-            "snacksByMachineId": 1,
-            "quantity": 2
-        }
-    ],
-    "defectiveSnacksByMachine":
-    [
-        {
-            "id": 1,
-            "snacksByMachineId": 1,
-            "quantity": 3
-        }
-    ]
+  "snacks": [
+    {
+      "id": 1,
+      "name": "Snickers",
+      "brand": "Mars Inc.",
+      "inventory": 99,
+      "wholesaleprice": 0.25
+    }
+  ],
+  "machines": [
+    {
+      "id": 1,
+      "address": "102 North Ln",
+      "city": "Hendersonville",
+      "zipcode": 37055
+    }
+  ],
+  "snacksByMachine": [
+    {
+      "id": 1,
+      "machineId": 1,
+      "snackId": 1,
+      "price": 1.25,
+      "quantity": 12
+    }
+  ],
+  "defectiveInventory": [
+    {
+      "id": 1,
+      "snackId": 1,
+      "quantity": 7
+    }
+  ],
+  "soldSnacksbyMachine": [
+    {
+      "id": 1,
+      "snacksByMachineId": 1,
+      "quantity": 2
+    }
+  ],
+  "defectiveSnacksByMachine": [
+    {
+      "id": 1,
+      "snacksByMachineId": 1,
+      "quantity": 3
+    }
+  ]
 }

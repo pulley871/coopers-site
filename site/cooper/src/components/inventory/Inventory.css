@@ -1,0 +1,15 @@
+.snack-container{
+    border: 2px solid blue;
+    background-color: aqua;
+    border-radius: 12%;
+    max-width: 20rem;
+    margin: auto;
+    padding: 1rem;
+}
+.snack-name{
+    font-weight: bolder;
+}
+.snack-info{
+    padding: 0;
+    list-style: none;
+}
