@@ -2,6 +2,7 @@ import { Route } from "react-router"
 import { DataProvider } from "./data/DataProvider"
 import { DefectiveInventory } from "./defective/UpdateDefectiveInventory"
 import { Inventory } from "./inventory/Inventory"
+import { InventoryForm } from "./inventory/InventoryForm"
 import { UpdateInventoryQuantity } from "./inventory/InventoryUpdateQuantity"
 import { Machines } from "./machines/Machines"
 import { SelectedMachine } from "./selectedmachine/SelectedMachine"
@@ -13,6 +14,9 @@ export const AppView = () =>{
             <DataProvider>
                 <Route exact path = "/inventory">
                     <Inventory />
+                </Route>
+                <Route path = "/inventory/addSnacks">
+                    <InventoryForm />
                 </Route>
                 <Route exact path = "/inventory/quantityupdate/:id(\d+)">
                     <UpdateInventoryQuantity />
