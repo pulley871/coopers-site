@@ -21,6 +21,18 @@
       "address": "102 North Ln",
       "city": "Hendersonville",
       "zipcode": 37055
+    },
+    {
+      "address": "320 south dr",
+      "city": "Clarksville",
+      "zipcode": 37042,
+      "id": 2
+    },
+    {
+      "address": "555 east",
+      "city": "Blues",
+      "zipcode": 37042,
+      "id": 3
     }
   ],
   "snacksByMachine": [
@@ -47,14 +59,16 @@
   "soldSnacksbyMachine": [
     {
       "id": 1,
-      "snacksByMachineId": 1,
+      "snackId": 1,
+      "machineId": 1,
       "quantity": 2
     }
   ],
   "defectiveSnacksByMachine": [
     {
       "id": 1,
-      "snacksByMachineId": 1,
+      "snackId":1,
+      "machineId": 1,
       "quantity": 3
     }
   ]

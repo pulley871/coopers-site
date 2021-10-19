@@ -4,9 +4,11 @@ import { DefectiveInventory } from "./defective/UpdateDefectiveInventory"
 import { Inventory } from "./inventory/Inventory"
 import { InventoryForm } from "./inventory/InventoryForm"
 import { UpdateInventoryQuantity } from "./inventory/InventoryUpdateQuantity"
+import { AddSnack } from "./machines/AddSnack"
 import { MachineForm } from "./machines/MachineForm"
 import { Machines } from "./machines/Machines"
-import { SelectedMachine } from "./selectedmachine/SelectedMachine"
+import { SingleMachine } from "./machines/SingleMachine"
+
 
 export const AppView = () =>{
 
@@ -25,15 +27,20 @@ export const AppView = () =>{
                 <Route exact path = "/inventory/defectupdate/:id(\d+)">
                     <DefectiveInventory />
                 </Route>
-                <Route path = "/machines">
+                <Route exact path = "/machines">
                     <Machines />
                 </Route>
-                <Route path = "/machines/addMachine">
+                <Route exact path = "/machines/addsnack">
+                    <AddSnack />
+                </Route>
+                <Route path ="/machines/:machineId(\d+)">
+                    <SingleMachine />
+                </Route>
+                    
+                <Route  path = "/machines/addMachine">
                     <MachineForm />
                 </Route>
-                <Route exact path = "/machines/:machineId(\d+)">
-                    <SelectedMachine />
-                </Route>
+                
             </DataProvider>
         </>
     )
